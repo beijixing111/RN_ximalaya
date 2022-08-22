@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Config from 'react-native-config';
+import apiKeyCode from '@/config/key';
 
 axios.defaults.baseURL = Config.API_URL;
 
@@ -8,7 +9,7 @@ axios.interceptors.request.use(
   function (config) {
     console.log('请求config', config);
     config.headers = {
-      icode: '****', // 填写自己的key值
+      icode: apiKeyCode, // 填写自己的key值
     };
     return config;
   },
